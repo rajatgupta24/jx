@@ -56,7 +56,7 @@ jobs:
         username: jenkins-x
         password: ${{ secrets.GHCR_TOKEN }}
     - name: Build and push jx-boot
-      uses: docker/build-push-action@v3
+      uses: docker/build-push-action@v4
       with:
         context: .
         file: ./Dockerfile-boot
@@ -68,7 +68,7 @@ jobs:
           ghcr.io/jenkins-x/jx-boot:latest
           ghcr.io/jenkins-x/jx-boot:${{ steps.prep.outputs.version }}
     - name: Build and push jx-tfo-aws
-      uses: docker/build-push-action@v3
+      uses: docker/build-push-action@v4
       with:
         context: .
         file: ./Dockerfile-tfo-aws
@@ -80,7 +80,7 @@ jobs:
           ghcr.io/jenkins-x/terraform-operator-aws:latest
           ghcr.io/jenkins-x/terraform-operator-aws:${{ steps.prep.outputs.version }}
     - name: Build and push jx-tfo-gcp
-      uses: docker/build-push-action@v3
+      uses: docker/build-push-action@v4
       with:
         context: .
         file: ./Dockerfile-tfo-gcp
@@ -92,7 +92,7 @@ jobs:
           ghcr.io/jenkins-x/terraform-operator-gcp:latest
           ghcr.io/jenkins-x/terraform-operator-gcp:${{ steps.prep.outputs.version }}
     - name: Build and push jx
-      uses: docker/build-push-action@v3
+      uses: docker/build-push-action@v4
       with:
         context: .
         file: ./Dockerfile
@@ -138,7 +138,7 @@ jobs:
         username: jenkins-x
         password: ${{ secrets.GHCR_TOKEN }}
     - name: Build and push jx-go
-      uses: docker/build-push-action@v3
+      uses: docker/build-push-action@v4
       with:
         context: .
         file: ./Dockerfile-go
@@ -150,7 +150,7 @@ jobs:
           ghcr.io/jenkins-x/jx-go:latest
           ghcr.io/jenkins-x/jx-go:${{ steps.prep.outputs.version }}
     - name: Build and push jx-go-maven
-      uses: docker/build-push-action@v3
+      uses: docker/build-push-action@v4
       with:
         context: .
         file: ./Dockerfile-go-maven
